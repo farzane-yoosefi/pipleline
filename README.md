@@ -33,8 +33,64 @@ This allows all steps to be executed with one line of code,
 and ensures the same workflow in both training and test sets while prevents data leakage and potential errors that occure
 during manual deployment.
 
+## Components of a pipeline
+Pipeline components are the individual building blocks that make up a pipeline.
+
+- Each step contains a single component (transformer OR estimator)
+- Steps are typically tuples: `(name, component)`
+- `transformer`: Transforms/preprocesses data (implements `fit()` and `transform()`)
+- `estimator`: Learns patterns and makes predictions (implements `fit()` and `predict()`)
+- 
+>> In **machine learning pipelines**, the final step is usually an estimator.
+
+This an image which you can see the pipeline , its components and how it works :
+
 <p align="center"><img src="https://github.com/farzane-yoosefi/pipleline/blob/main/pipe.png" alt="Description" width="300" /></p>
 
-## Components of a pipeline
+## create pipeline
+### step1 : importing the data and necessary libraries
+```python
+import pandas as pd
+from sklearn  import datasets
+```
+### step2 : Find out about the dataset
+```python
+# Converting the data into a pandas dataframe
+data = datasets.load_iris()
+data = pd.DataFrame(data.data,columns = feature_names)
+```
+Now you can find out about the data using pandas functions after converting it to a DataFrame.at
+
+Here you look at first 5 rows of the data: 
+```python
+# Look at last 5 row
+print("=== 1. First Look (Head) ===")
+print(df.head())
+```
+output :
+```
+# Look at last 5 row
+print("=== 1. First Look (Head) ===")
+print(df.head())
+```
+See how many rows and columns there are.
+```python
+# (Numbers of rows , number of columns)
+print("===  2. Shape of data(shape)  ===")
+print(f"rows : {df.shape[0]} columns : {df.shape[1]}")
+```
+OUtput :
+```
+# (Numbers of rows , number of columns)
+print("===  2. Shape of data(shape)  ===")
+print(f"rows : {df.shape[0]} columns : {df.shape[1]}")
+```
+Look at the information of data 
+```python
+# Column names , data types , and non-null counts
+print("===  Information about data  ===")
+print(df.info())
+```
+
 
 
