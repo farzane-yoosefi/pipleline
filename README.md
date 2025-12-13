@@ -52,6 +52,7 @@ This an image which you can see the pipeline , its components and how it works :
 ```python
 import pandas as pd
 from sklearn  import datasets
+from sklearn.model_selection import train_test_split
 ```
 ### step2 : Find out about the dataset
 ```python
@@ -110,7 +111,54 @@ Data columns (total 4 columns):
  3   petal width (cm)   150 non-null    float64
 dtypes: float64(4)
 memory usage: 4.8 KB
-None
+
 ```
+### Step 3 : Define feature , target and split the data
+```python
+X = data.data
+Y = data.target
+X_train,X_test,Y_train,Y_test = train_test_split(X, Y , test_size = 0.2,X_train, random_state = 42)
+```
+### step 4 : Define the `pipeline` by specifying the steps
+```python
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+from sklearn.linear_model import LogisticRegression
+
+#Set up the pipeline
+Pipe = Pipeline([
+    ('scalar' , StandardScaler()),
+    ('PCA',PCA(n_components=2)),
+    ('logistic',LogisticRegression())
+])
+```
+### step 5 : Train the model and make prediction :
+
+```python
+Pipe.fit(X_train,Y_train)
+pred = Pipe.predict(X_test)
+```
+output : 
+```
+array([0, 2, 2, 1, 2, 2, 1, 1, 2,
+       1, 0, 0, 1, 2, 2, 2, 1, 0, 2, 0, 1, 2,
+       2, 1, 1, 2, 1, 0, 0, 2])
+```
+### Step 6t :Evaluate the model :
+```python
+from sklearn.metrics import accuracy_score
+score = accuracy_score(pred , Y_test)
+score
+```
+output :
+```
+0.9333333333333333
+```
+## What did actually the model do ?
+
+
+
+
 
 
