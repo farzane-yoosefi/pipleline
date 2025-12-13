@@ -57,9 +57,9 @@ from sklearn  import datasets
 ```python
 # Converting the data into a pandas dataframe
 data = datasets.load_iris()
-data = pd.DataFrame(data.data,columns = feature_names)
+data = pd.DataFrame(data.data,columns =data.feature_names)
 ```
-Now you can find out about the data using pandas functions after converting it to a DataFrame.at
+Now you can find out about the data using pandas functions after converting it to a DataFrame.
 
 Here you look at first 5 rows of the data: 
 ```python
@@ -69,9 +69,14 @@ print(df.head())
 ```
 output :
 ```
-# Look at last 5 row
-print("=== 1. First Look (Head) ===")
-print(df.head())
+=== 1. First Look (Head) ===
+   sepal length (cm)  sepal width (cm)  petal length (cm)  petal width (cm)
+0                5.1               3.5                1.4               0.2
+1                4.9               3.0                1.4               0.2
+2                4.7               3.2                1.3               0.2
+3                4.6               3.1                1.5               0.2
+4                5.0               3.6                1.4               0.2
+
 ```
 See how many rows and columns there are.
 ```python
@@ -81,9 +86,8 @@ print(f"rows : {df.shape[0]} columns : {df.shape[1]}")
 ```
 OUtput :
 ```
-# (Numbers of rows , number of columns)
-print("===  2. Shape of data(shape)  ===")
-print(f"rows : {df.shape[0]} columns : {df.shape[1]}")
+===  2. Shape of data(shape)  ===
+rows : 150 columns : 4
 ```
 Look at the information of data 
 ```python
@@ -91,6 +95,22 @@ Look at the information of data
 print("===  Information about data  ===")
 print(df.info())
 ```
+output :
+```
 
+===  Information about data  ===
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 150 entries, 0 to 149
+Data columns (total 4 columns):
+ #   Column             Non-Null Count  Dtype  
+---  ------             --------------  -----  
+ 0   sepal length (cm)  150 non-null    float64
+ 1   sepal width (cm)   150 non-null    float64
+ 2   petal length (cm)  150 non-null    float64
+ 3   petal width (cm)   150 non-null    float64
+dtypes: float64(4)
+memory usage: 4.8 KB
+None
+```
 
 
