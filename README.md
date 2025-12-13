@@ -33,6 +33,8 @@ This allows all steps to be executed with one line of code,
 and ensures the same workflow in both training and test sets while prevents data leakage and potential errors that occure
 during manual deployment.
 
+<img src="https://github.com/farzane-yoosefi/pipleline/blob/main/pipe.png" alt="Description" width="300" />
+
 ## Components of a pipeline
 
 
