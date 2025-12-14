@@ -49,6 +49,7 @@ This an image which you can see the pipeline , its components and how it works :
 
 ## create pipeline
 ### step1 : importing the data and necessary libraries
+To know about the dataset :https://github.com/farzane-yoosefi/iris-dataset/blob/main/README.md
 ```python
 import pandas as pd
 from sklearn  import datasets
