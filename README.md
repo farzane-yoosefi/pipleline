@@ -155,16 +155,16 @@ output :
 ```
 0.9333333333333333
 ```
-## What did actually the model do ?
-**iris** dataset is a type of simple and classic dataset used for learning machine learning and sata analyses.
-It is a type of measurment of 150 flowers.
-There are 3 species of the this flower : ****Setosa**** ,****versicolor****,****virginica**** 
-which are the target values.
-These types are predicted based on 4 features :
-- Sepal length
-- Sepal width
-- Petal length
-- Petal width
+This was an overview of creating `pipeline` .
+
+I hope I could halp you understanding it carefully.
+
+If you have any problem or question I am here to help you .
+
+You send me E-mail and ask your question :
+yooaefifarzane@gmail.com
+
+
 
 
 
