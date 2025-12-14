@@ -117,7 +117,7 @@ memory usage: 4.8 KB
 ```python
 X = data.data
 Y = data.target
-X_train,X_test,Y_train,Y_test = train_test_split(X, Y , test_size = 0.2,X_train, random_state = 42)
+X_train,X_test,Y_train,Y_test = train_test_split(X, Y , test_size = 0.2, random_state = 42)
 ```
 ### step 4 : Define the `pipeline` by specifying the steps
 ```python
@@ -145,7 +145,7 @@ array([0, 2, 2, 1, 2, 2, 1, 1, 2,
        1, 0, 0, 1, 2, 2, 2, 1, 0, 2, 0, 1, 2,
        2, 1, 1, 2, 1, 0, 0, 2])
 ```
-### Step 6t :Evaluate the model :
+### Step 6 :Evaluate the model :
 ```python
 from sklearn.metrics import accuracy_score
 score = accuracy_score(pred , Y_test)
